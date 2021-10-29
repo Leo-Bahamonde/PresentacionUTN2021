@@ -1,3 +1,14 @@
+.image-jumbotron{
+  background-image: url("/images/5461280.jpg");
+  background-repeat: no-repeat;
+ 
+ 
+}
+
+.padding-jumbotron{
+  padding: 350px;
+} 
+
 #carousel_2a21{
   padding-top: 100px;
 }
@@ -20,7 +31,7 @@
 .u-section-1 .u-image-1 {
   width: 485px;
   height: 485px;
-  background-image: url("../imagenes/53876-128216.jpg");
+  background-image: url("/images/53876-128216.jpg");
   background-position: 50% 50%;
   margin: 30px auto 0;
 }

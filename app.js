@@ -9,6 +9,7 @@ require("dotenv").config();
 var indexRouter = require('./routes/index');
 var contactRouter = require('./routes/contact');
 var productRouter = require('./routes/product');
+var productDetailRouter = require('./routes/productDetail')
 
 var app = express();
 
@@ -27,13 +28,13 @@ app.use(express.static(path.join(__dirname, 'public')));
       //INICIO
       app.use('/', indexRouter);
      
-
       //CONTACTOS
       app.use('/contactos', contactRouter);
       
-
       //PRODUCTOS
       app.use('/productos', productRouter);
+
+      app.use("/Descripcion-del-producto", productDetailRouter)
     
 
 // catch 404 and forward to error handler
@@ -56,4 +57,29 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+//DataBase
+
+var pool = require ("./models/bd");
+pool.query("select * from empleados").then(function(resultados){
+  console.log(resultados);
+})
+
 module.exports = app;
+
+
+
+
+
+
+
+
+
+
+/*
+
+pegar en el arch .env
+
+SMTP_HOST=smtp.mailtrap.io
+SMTP_PORT=2525
+SMTP_USER=f166fb88137227
+SMTP_PASS=b7b0b25e44d09b */
