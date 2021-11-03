@@ -9,7 +9,10 @@ require("dotenv").config();
 var indexRouter = require('./routes/index');
 var contactRouter = require('./routes/contact');
 var productRouter = require('./routes/product');
-var productDetailRouter = require('./routes/productDetail')
+var productDetailRouter = require('./routes/productDetail');
+var loginRouter = require ("./routes/admin/login");
+var logoutRouter =  require ("./routes/admin/logout");
+var  adminRouter = require ("./routes/admin/novedades")
 
 var app = express();
 
@@ -34,9 +37,19 @@ app.use(express.static(path.join(__dirname, 'public')));
       //PRODUCTOS
       app.use('/productos', productRouter);
 
-      app.use("/Descripcion-del-producto", productDetailRouter)
-    
+      //DESCRIPCION DEL PRODUCTO
+      app.use("/Descripcion-del-producto", productDetailRouter);
 
+      //Inicio sesion
+      app.use("/admin/login", loginRouter);
+
+       //Registrarse
+       app.use("/registrarse", logoutRouter);
+
+       //Novedades
+       app.use("/admin/novedades", adminRouter);
+
+      
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -59,10 +72,10 @@ app.use(function(err, req, res, next) {
 
 //DataBase
 
-var pool = require ("./models/bd");
+/* var pool = require ("./models/bd");
 pool.query("select * from empleados").then(function(resultados){
   console.log(resultados);
-})
+}) */
 
 module.exports = app;
 
