@@ -10,23 +10,20 @@
             <h5>Ingresa tu email y tu clave de SillonesFB</h5>
             <div class="u-expanded-width u-form u-form-1">
 
-              <form action="/admin/login" method="post" class="u-clearfix u-form-spacing-27 u-form-vertical u-inner-form" style="padding: 0px;">
-                <div class="u-form-email u-form-group u-form-group-2">
-                 {{!--  <label for="email-cd2c" class="u-form-control-hidden u-label"></label> --}}
-                  <input type="text" placeholder="Ingresa tu e-mail" id="usuario" name="usuario" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white u-input-2" required="">
+              <form action="/admin/login" method="post" >
+                <div >
+                  <input type="text" placeholder="Ingresa tu e-mail" id="usuario" name="usuario" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white u-input-1" required="">
                 </div>
-                <div class="u-form-group u-form-name u-form-group-1">
-                  {{!-- <label for="name-30a4" class="u-form-control-hidden u-label">Name</label> --}}
+                <div >
                   <input type="password" placeholder="Ingresa tu clave" id="password" name="password" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white u-input-1" required="">
                 </div>
-                <div class="u-align-left u-form-group u-form-submit u-form-group-3">
-                  <button type="submit" class="u-active-grey-75 u-black u-border-1 u-border-active-grey-75 u-border-black u-border-hover-grey-75 u-btn u-btn-submit u-button-style u-hover-grey-75 u-btn-1">Inicia secion</button>
-                  
+                <div >
+                  <button type="submit" class="u-active-grey-75 u-black u-border-1 u-border-active-grey-75 u-border-black u-border-hover-grey-75 u-btn u-btn-submit u-button-style u-hover-grey-75 u-btn-1" >Inicia secion</button> 
                 </div>
-                  <p>Aun no tienes cuenta? As  <a href="/registrarse">click aqui</a> para registrarte, es rapido y gratis!</p>
+                  <p>Aun no tienes cuenta? As  <a href="/admin/logout">click aqui</a> para registrarte, es rapido y gratis!</p>
               </form>
               {{#if error}}
-              <p style="color: red;">Usuario o contraseña incorrecta</p>
+              <p style="color:red">*Usuario o contraseña incorrecta</p>
               {{/if}}
             </div>
           </div>

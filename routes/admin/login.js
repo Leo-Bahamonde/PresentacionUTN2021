@@ -6,9 +6,16 @@ var usuariosModel = require("./../../models/usuariosModel");
 router.get('/', function(req, res, next) {
   res.render('admin/login',{
     layout:"admin/layout",
-
   });
 });
+
+/* cerrar sesion */
+router.get("/logout", function (req, res ,next){
+  req.session.destroy(); //destruir
+  res.render("admin/login",{
+    layout: "admin/layout"
+  })
+})
     
  router.post("/", async (req,res,next) =>{
   try{
@@ -20,6 +27,8 @@ router.get('/', function(req, res, next) {
     var data = await usuariosModel.getUserAndPassword(usuario, password);
 
     if(data != undefined){
+      req.session.id_usuario = data.id;
+      req.session.nombre = data.usuario;
       res.redirect("/admin/novedades");
     } else {
       res.render("admin/login", {

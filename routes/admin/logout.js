@@ -3,7 +3,11 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('logout.hbs',{ title: "Registrarse"});
+  res.render('admin/logout',{
+    layout:"admin/layout",
+
+  });
 });
+
 
 module.exports = router;
