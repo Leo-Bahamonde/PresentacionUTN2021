@@ -7,7 +7,6 @@ async function getNovedades (){
 }
 
 async function  deleteNovedadesById (id){
-
     var query = "delete from novedades where id = ?";
     var rows = await pool.query(query, [id]);
     return rows;
@@ -30,13 +29,14 @@ async function getNovedadById (id){
     var rows = await pool.query(query, [id]);
     return rows[0];
 }
+
 /* UPDATE */
 async function modificarNovedadById (obj, id){
     try{
         var query = "update novedades set ? where id=?";
         var rows = await pool.query(query, [obj, id]);
-        return rows;
-    } catch (error){
+        return rows;     
+    }catch (error){
         throw error;
     }
 }
