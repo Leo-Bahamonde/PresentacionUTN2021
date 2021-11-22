@@ -1,25 +1,19 @@
 
-  
+  {{#each novedades}}
   <div class="container text-center my-3">                          
 <div class="align-items-center"><hr>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
-            <img src="images/0AB5iS.jpg" alt="ESQUINERO" title="ESQUINERO" width="500px" height="auto">
-            <section>
-                <div class="my-3">
-                  <a class="example-image-link" href="images/0AB5iS.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-                    <img class="example-image zoom_desaparecer" src="images/0AB5iS.jpg" width="120px" height="80px" alt=""/></a>
-                </div>
-              </section>
+            <img src={{imagen}} alt="ESQUINERO" title="ESQUINERO" width="500px" height="auto">
+          
     
         </div>
+          
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4" >
-            <h1>ESQUINERO</h1>
+            <h2>{{titulo}}</h2>
             <hr width="50%">
             <h4 class="pt-2">descripcion</h4>
-            <i>ESQUINERO 3 cuerpos de 210 Cm ancho y 75 Cm de largo. Almohadones placa soft y vellon siliconado, para brindar máximo confort
-                Tachas Decorativas al Frente de Cada Brazo
-                Patas de acero Incluidas </i><br><br>
+            <i>{{cuerpo}} </i><br><br>
                 <a href="" class="btn btn-primary" type="submit">COMPRAR</a><br><br>
                 <a href="" class="btn btn-primary" type="submit">AGREGAR AL CARRITO</a>   
           </div>
@@ -27,6 +21,7 @@
      </div><br>
     
   </div>
+          {{/each}} 
 
     <!--FIN PAGINAS-->
 
